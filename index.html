@@ -148,9 +148,6 @@
             object-fit: cover;
             display: block;
             transition: transform 0.3s;
-            pointer-events: none;
-            user-select: none;
-            -webkit-user-drag: none;
         }
 
         .product-thumb:hover img {
@@ -167,6 +164,7 @@
             padding: 4px 10px;
             border-radius: 20px;
             font-weight: 500;
+            pointer-events: none;
         }
 
         .product-info {
@@ -391,7 +389,7 @@
 
                 <article class="product">
                     <div class="product-thumb" onclick="openLightbox(0)">
-                        <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.3.jpg" alt="España 2026 Fan">
+                        <img src="https://camisetasfootball.github.io/lookbook/espana_local_fan_26.3.jpg" alt="España 2026 Fan">
                         <span class="thumb-badge">📷 11 fotos</span>
                     </div>
                     <div class="product-info">
@@ -427,8 +425,9 @@
     </footer>
 
     <script>
+        // Nombres exactos de los archivos en tu repo (algunos con ñ, otros sin)
         const images = [
-            "https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.3.jpg",
+            "https://camisetasfootball.github.io/lookbook/espana_local_fan_26.3.jpg",
             "https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.4.jpg",
             "https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.5.jpg",
             "https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.6.jpg",
