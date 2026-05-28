@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -93,6 +93,21 @@
             display: inline-block;
         }
 
+        .subcategory {
+            font-size: 1rem;
+            color: #666;
+            margin: 1.5rem 0 1rem 0;
+            padding-left: 0.5rem;
+            border-left: 3px solid #111;
+        }
+
+        .subsubcategory {
+            font-size: 0.95rem;
+            color: #888;
+            margin: 1rem 0 1rem 1rem;
+            font-weight: 500;
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -114,23 +129,54 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
 
-        .product-img {
+        /* Carrusel simple y robusto */
+        .carousel-wrap {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel-slides {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .carousel-slides::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-slides img {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
             width: 100%;
             aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.85);
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--muted);
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
+            padding-bottom: 2px;
         }
-
-        .product-img::after {
-            content: "📷 Imagen";
-            opacity: 0.5;
-        }
+        .carousel-nav.prev { left: 8px; }
+        .carousel-nav.next { right: 8px; }
 
         .product-info {
             padding: 1.2rem;
@@ -200,6 +246,9 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
+            .carousel-nav {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -207,7 +256,7 @@
 
     <header>
         <div class="brand">Lookbook</div>
-        <a href="https://t.me/Pacopoyo" target="_blank" class="telegram-btn">
+        <a href="https://t.me/pacopoyo" target="_blank" class="telegram-btn">
             <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
             Pedidos por Telegram
         </a>
@@ -215,55 +264,50 @@
 
     <div class="container">
 
-        
+        <!-- CATEGORÍA PRINCIPAL -->
+        <section class="category">
+            <h2 class="category-title">Camisetas versión fan — 21,00 €</h2>
 
-        
+            <h3 class="subcategory">Camisetas selecciones nacionales</h3>
 
-        
+            <h4 class="subsubcategory">🇪🇸 España</h4>
 
-    
-    <!-- CATEGORÍA: Versión Fan -->
-    <section class="category">
-        <h2 class="category-title">Camisetas versión fan — 21,00 €</h2>
-        
-        <h3 style="font-size:1rem; color:#666; margin:1.5rem 0 1rem 0; padding-left:0.5rem; border-left:3px solid #111;">Camisetas selecciones nacionales</h3>
-        
-        <h4 style="font-size:0.95rem; color:#888; margin:1rem 0 1rem 1rem; font-weight:500;">🇪🇸 España</h4>
-        
-        <div class="grid" style="margin-left:1rem;">
-                        <!-- Producto: España 2026 Fan -->
-            <article class="product">
-                <div class="carousel">
-                    <button class="carousel-btn prev" onclick="this.nextElementSibling.scrollBy({left:-this.parentElement.offsetWidth,behavior:'smooth'})">‹</button>
-                    <div class="carousel-track">
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.3.jpg" alt="España 1"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.4.jpg" alt="España 2"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.5.jpg" alt="España 3"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.6.jpg" alt="España 4"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.7.jpg" alt="España 5"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.jpg" alt="España 6"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.3.jpg" alt="España 7"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.4.jpg" alt="España 8"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.5.jpg" alt="España 9"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.6.jpg" alt="España 10"></div>
-                        <div class="carousel-slide"><img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.7.jpg" alt="España 11"></div>
+            <div class="grid" style="margin-left:1rem;">
+
+                <!-- Producto: España 2026 Fan -->
+                <article class="product">
+                    <div class="carousel-wrap">
+                        <button class="carousel-nav prev" onclick="const s=this.parentElement.querySelector('.carousel-slides');s.scrollBy({left:-s.offsetWidth,behavior:'smooth'})">‹</button>
+                        <div class="carousel-slides">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.3.jpg" alt="España 1" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.4.jpg" alt="España 2" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.5.jpg" alt="España 3" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.6.jpg" alt="España 4" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.7.jpg" alt="España 5" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.jpg" alt="España 6" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.3.jpg" alt="España 7" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.4.jpg" alt="España 8" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.5.jpg" alt="España 9" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.6.jpg" alt="España 10" draggable="false">
+                            <img src="https://camisetasfootball.github.io/lookbook/espa%C3%B1a_visitante_fan_26.7.jpg" alt="España 11" draggable="false">
+                        </div>
+                        <button class="carousel-nav next" onclick="const s=this.parentElement.querySelector('.carousel-slides');s.scrollBy({left:s.offsetWidth,behavior:'smooth'})">›</button>
                     </div>
-                    <button class="carousel-btn next" onclick="this.previousElementSibling.scrollBy({left:this.parentElement.offsetWidth,behavior:'smooth'})">›</button>
-                </div>
-                <div class="product-info">
-                    <div class="product-name">España 2026 Fan</div>
-                    <div class="product-meta">Local y visitante · Versión aficionado · Tallas consultar</div>
-                    <div class="product-price">21,00 €</div>
-                    <a href="https://t.me/pacopoyo?text=Hola,%20quiero:%20España%202026%20Fan%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
-                </div>
-            </article>
-            
-        </div>
-    </section>
+                    <div class="product-info">
+                        <div class="product-name">España 2026 Fan</div>
+                        <div class="product-meta">Local y visitante · Versión aficionado · Tallas consultar</div>
+                        <div class="product-price">21,00 €</div>
+                        <a href="https://t.me/pacopoyo?text=Hola,%20quiero:%20España%202026%20Fan%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
     </div>
 
     <footer>
-        <p>Para pedidos y consultas, escríbeme por <a href="https://t.me/Pacopoyo" target="_blank">Telegram</a>.</p>
+        <p>Para pedidos y consultas, escríbeme por <a href="https://t.me/pacopoyo" target="_blank">Telegram</a>.</p>
         <p style="margin-top:0.5rem; opacity:0.6;">Lookbook · 2026</p>
     </footer>
 
