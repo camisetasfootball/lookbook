@@ -210,7 +210,6 @@
             background: #333;
         }
 
-        /* ===== LIGHTBOX ===== */
         .lightbox {
             display: none;
             position: fixed;
@@ -381,7 +380,7 @@
     <div class="container">
 
         <section class="category">
-            <h2 class="category-title">Camisetas versión fan — 21,00 €</h2>
+            <h2 class="category-title">Camisetas versión fan — 18,00 €</h2>
             <h3 class="subcategory">Camisetas selecciones nacionales</h3>
             <h4 class="subsubcategory">🇪🇸 España</h4>
 
@@ -395,7 +394,7 @@
                     <div class="product-info">
                         <div class="product-name">España 2026 Fan</div>
                         <div class="product-meta">Local y visitante · Versión aficionado · Tallas consultar</div>
-                        <div class="product-price">21,00 €</div>
+                        <div class="product-price">18,00 €</div>
                         <a href="https://t.me/pacopoyo?text=Hola,%20quiero:%20España%202026%20Fan%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
                     </div>
                 </article>
@@ -405,7 +404,6 @@
 
     </div>
 
-    <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
         <span class="lightbox-counter" id="lightboxCounter">1 / 11</span>
@@ -425,7 +423,6 @@
     </footer>
 
     <script>
-        // Nombres exactos de los archivos en tu repo (algunos con ñ, otros sin)
         const images = [
             "https://camisetasfootball.github.io/lookbook/espana_local_fan_26.3.jpg",
             "https://camisetasfootball.github.io/lookbook/espa%C3%B1a_local_fan_26.4.jpg",
@@ -496,7 +493,6 @@
             updateLightbox();
         }
 
-        // Swipe en móvil
         let touchStartX = 0;
         let touchEndX = 0;
         const lightboxMain = document.querySelector('.lightbox-main');
