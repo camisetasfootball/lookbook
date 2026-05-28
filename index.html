@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lookbook — Colección Privada</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --text: #111;
+            --muted: #888;
+            --accent: #0088cc;
+            --card: #fff;
+            --border: #eee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(250, 250, 250, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2rem;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .telegram-btn {
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .telegram-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+        }
+
+        .telegram-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .category {
+            margin-bottom: 3.5rem;
+        }
+
+        .category-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--text);
+            display: inline-block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .product-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-img::after {
+            content: "📷 Imagen";
+            opacity: 0.5;
+        }
+
+        .product-info {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-meta {
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: auto;
+            margin-bottom: 1rem;
+        }
+
+        .order-btn {
+            display: block;
+            text-align: center;
+            background: var(--text);
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .order-btn:hover {
+            background: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: var(--muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 1rem;
+            }
+            .container {
+                padding: 1rem;
+            }
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="brand">Lookbook</div>
+        <a href="https://t.me/Pacopoyo" target="_blank" class="telegram-btn">
+            <svg viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
+            Pedidos por Telegram
+        </a>
+    </header>
+
+    <div class="container">
+
+        <section class="category">
+            <h2 class="category-title">Camisetas / T-Shirts</h2>
+            <div class="grid">
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Oversized Basic Black</div>
+                        <div class="product-meta">100% algodón · Tallas S-XL</div>
+                        <div class="product-price">24,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Oversized%20Basic%20Black%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Vintage Wash Tee</div>
+                        <div class="product-meta">Algodón orgánico · Tallas M-XXL</div>
+                        <div class="product-price">29,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Vintage%20Wash%20Tee%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Heavyweight Boxy Fit</div>
+                        <div class="product-meta">300 gsm · Beige / Gris</div>
+                        <div class="product-price">32,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Heavyweight%20Boxy%20Fit%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">Sudaderas / Hoodies</h2>
+            <div class="grid">
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Crewneck Essential</div>
+                        <div class="product-meta">Interior felpa · Negro / Crema</div>
+                        <div class="product-price">45,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Crewneck%20Essential%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Zip Hoodie Oversized</div>
+                        <div class="product-meta">Capa doble · Gris piedra</div>
+                        <div class="product-price">52,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Zip%20Hoodie%20Oversized%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">Pantalones / Bottoms</h2>
+            <div class="grid">
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Cargo Wide Leg</div>
+                        <div class="product-meta">6 bolsillos · Verde caqui / Negro</div>
+                        <div class="product-price">48,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Cargo%20Wide%20Leg%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Jogger Premium</div>
+                        <div class="product-meta">Mezcla algodón · Gris melange</div>
+                        <div class="product-price">38,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Jogger%20Premium%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2 class="category-title">Accesorios</h2>
+            <div class="grid">
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Gorra Dad Cap</div>
+                        <div class="product-meta">Bordado · Ajustable</div>
+                        <div class="product-price">18,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Gorra%20Dad%20Cap" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <article class="product">
+                    <div class="product-img"></div>
+                    <div class="product-info">
+                        <div class="product-name">Tote Bag Canvas</div>
+                        <div class="product-meta">Algodón grueso · Natural</div>
+                        <div class="product-price">14,00 €</div>
+                        <a href="https://t.me/Pacopoyo?text=Hola,%20quiero%20pedir:%20Tote%20Bag%20Canvas" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Para pedidos y consultas, escríbeme por <a href="https://t.me/Pacopoyo" target="_blank">Telegram</a>.</p>
+        <p style="margin-top:0.5rem; opacity:0.6;">Lookbook · 2026</p>
+    </footer>
+
+</body>
+</html>
