@@ -75,8 +75,13 @@
         /* Grid productos - Mosaico compacto */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 0.8rem;
+        }
+        @media (min-width: 500px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
         }
         .product {
             background: var(--card);
@@ -253,18 +258,31 @@
         <!-- La Liga -->
         <section class="category">
             <h2 class="category-title">La Liga</h2>
-            <h3 class="subsubcategory">🇪🇸 Real Madrid</h3>
 
             <div class="grid">
+                <!-- Real Madrid -->
                 <article class="product">
                     <div class="product-thumb" onclick="openLightbox(0, imagesRealMadrid)">
                         <img src="images/laliga/realmadrid/IMG_20260603_183528_640.jpg" alt="Real Madrid">
                         <span class="thumb-badge">📷 24 fotos</span>
                     </div>
                     <div class="product-info">
-                        <div class="product-name">Real Madrid</div>
+                        <div class="product-name">🇪🇸 Real Madrid</div>
                         <div class="product-meta">Local y visitante · Tallas consultar</div>
                         <a href="https://t.me/pacopoyo?text=Hola,%20quiero:%20Real%20Madrid%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
+                    </div>
+                </article>
+
+                <!-- Barcelona -->
+                <article class="product">
+                    <div class="product-thumb" onclick="openLightbox(0, imagesBarcelona)">
+                        <img src="images/laliga/barcelona/IMG_20260603_183236_018.jpg" alt="Barcelona">
+                        <span class="thumb-badge">📷 29 fotos</span>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">🇪🇸 Barcelona</div>
+                        <div class="product-meta">Local y visitante · Tallas consultar</div>
+                        <a href="https://t.me/pacopoyo?text=Hola,%20quiero:%20Barcelona%20(Talla:%20)" class="order-btn">Solicitar pedido</a>
                     </div>
                 </article>
             </div>
@@ -333,6 +351,39 @@
             "images/laliga/realmadrid/IMG_20260603_183555_593.jpg",
             "images/laliga/realmadrid/IMG_20260603_183555_394.jpg",
             "images/laliga/realmadrid/IMG_20260603_183555_419.jpg"
+        ];
+
+        // Galería Barcelona
+        const imagesBarcelona = [
+            "images/laliga/barcelona/IMG_20260603_183236_018.jpg",
+            "images/laliga/barcelona/IMG_20260603_183236_165.jpg",
+            "images/laliga/barcelona/IMG_20260603_183236_332.jpg",
+            "images/laliga/barcelona/IMG_20260603_183236_349.jpg",
+            "images/laliga/barcelona/IMG_20260603_183236_382.jpg",
+            "images/laliga/barcelona/IMG_20260603_183236_724.jpg",
+            "images/laliga/barcelona/IMG_20260603_183243_566.jpg",
+            "images/laliga/barcelona/IMG_20260603_183243_948.jpg",
+            "images/laliga/barcelona/IMG_20260603_183243_990.jpg",
+            "images/laliga/barcelona/IMG_20260603_183244_076.jpg",
+            "images/laliga/barcelona/IMG_20260603_183244_234.jpg",
+            "images/laliga/barcelona/IMG_20260603_183244_462.jpg",
+            "images/laliga/barcelona/IMG_20260603_183250_879.jpg",
+            "images/laliga/barcelona/IMG_20260603_183250_908.jpg",
+            "images/laliga/barcelona/IMG_20260603_183251_152.jpg",
+            "images/laliga/barcelona/IMG_20260603_183251_229.jpg",
+            "images/laliga/barcelona/IMG_20260603_183251_248.jpg",
+            "images/laliga/barcelona/IMG_20260603_183430_199.jpg",
+            "images/laliga/barcelona/IMG_20260603_183430_303.jpg",
+            "images/laliga/barcelona/IMG_20260603_183430_323.jpg",
+            "images/laliga/barcelona/IMG_20260603_183430_499.jpg",
+            "images/laliga/barcelona/IMG_20260603_183430_539.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_160.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_184.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_320.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_398.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_426.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_563.jpg",
+            "images/laliga/barcelona/IMG_20260603_183437_865.jpg"
         ];
 
         let currentImages = [];
